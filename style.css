@@ -155,7 +155,8 @@ nav {
 }
 
 .logo img {
-    height: 35px;
+    height: 55px;
+    width: auto;
 }
 
 .nav-links {

@@ -54,11 +54,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Sticky Nav transition
     const header = document.querySelector('header');
+    const navLogo = document.getElementById('nav-logo');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
+            if (navLogo) navLogo.src = 'assets/lifetwister-wordmark-dark-transparent.png';
         } else {
             header.classList.remove('scrolled');
+            if (navLogo) navLogo.src = 'assets/lifetwister-wordmark-transparent.png';
         }
     });
 });

@@ -126,12 +126,22 @@ section {
 
 /* Header & Nav */
 header {
-    background-color: var(--white);
-    padding: 1.5rem 0;
+    background-color: transparent;
+    padding: 2rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.4s ease;
+}
+
+header.scrolled {
+    background-color: var(--white);
+    padding: 1rem 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+header.scrolled .nav-links a {
+    color: var(--charcoal);
 }
 
 nav {
@@ -155,10 +165,23 @@ nav {
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
+    color: var(--white); /* Default for dark hero */
 }
 
 .nav-links a:hover {
     color: var(--gold);
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Hero Section */

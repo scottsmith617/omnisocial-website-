@@ -1,23 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Form Handling
     const leadForm = document.getElementById('lead-form');
-
     if (leadForm) {
         leadForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            // Get form data
             const formData = new FormData(leadForm);
             const data = Object.fromEntries(formData.entries());
-            
             console.log('Form submission:', data);
             
-            // Show success message
             const button = leadForm.querySelector('button');
             const originalText = button.textContent;
             
             button.textContent = 'Request Sent!';
             button.disabled = true;
-            button.style.backgroundColor = '#28a745';
+            button.style.backgroundColor = '#D4AF37'; // Match gold
             
             setTimeout(() => {
                 leadForm.reset();
@@ -40,5 +36,29 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
+    });
+
+    // Fade-in animations on scroll
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section, .premium-card, .process-step, .stat-box').forEach(el => {
+        el.classList.add('fade-in');
+        fadeObserver.observe(el);
+    });
+
+    // Sticky Nav transition
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     });
 });

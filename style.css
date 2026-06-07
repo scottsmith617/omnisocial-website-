@@ -177,6 +177,53 @@ nav {
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
+.price {
+    font-weight: 700;
+    color: var(--orange);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+/* Why Us Section */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.why-card {
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Testimonials */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.testimonial {
+    padding: 2.5rem;
+    background: var(--off-white);
+    border-radius: 10px;
+    border-left: 5px solid var(--blue);
+}
+
+.testimonial p {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial cite {
+    font-style: normal;
+}
+
 .service-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
